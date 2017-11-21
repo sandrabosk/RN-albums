@@ -2,19 +2,24 @@
 
 import React from 'react';
 // import ReactNative from 'react-native';
-import { Text, AppRegistry } from 'react-native'; //this line is saying I just need Text property from react-native
+import { AppRegistry } from 'react-native'; // => this line is saying I just need Text property from react-native
 // we have to declare this variable Text since here we don't have any gobal variables
 // tag Text is given to us from react-native library but we have to import it and this technique is called IMPORT DESTRUCTURE
+
+import Header from './src/components/header';
+
 
 //create a component (component has something that can be displayed on the screen)
 // component is JS function that returns some amount of JSX
 //react-native will take our component and render it to the screen
 
 const App = () => (
-    <Text> Something written here </Text>
+    //since we will use component nesting here we dont need this <Text> tag
+    // <Text> Something written here </Text>
+    <Header />
   );                               // ^
-                                // |
-                                  //   => this is JSX (looks like html but it is JS)
+                                   // |
+                                   //  => this is JSX (looks like html but it is JS)
 
 //render it to the device
 AppRegistry.registerComponent('albums', () => App );

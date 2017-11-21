@@ -17,6 +17,8 @@ const App = () => (
     //since we will use component nesting here we dont need this <Text> tag
     // <Text> Something written here </Text>
     <Header />
+  //   |
+  // this is how we do component nesting
   );                               // ^
                                    // |
                                    //  => this is JSX (looks like html but it is JS)

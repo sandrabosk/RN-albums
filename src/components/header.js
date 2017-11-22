@@ -4,17 +4,21 @@ import { Text, View } from 'react-native';
 
 
 // make component
-const Header = () => {
+const Header = (props) => {
+              // |
+              // we are passing an argument props and to make the text dynamic we
+            // are giving it down a property named headerText (or any other name)
             // this is the textStyle that we named inside this styles
             // object down and this is how we use it
             // ^
             // |-------------------------------------------
   const { textStyle, viewStyle } = styles;              // |
       // inside <Text> tag is where we apply the styles    |
-      // and this is the syntax                            |
+      // and this is the syntax                         // |
+      // this headerText can be any word                // |
   return (                                              // ^
     <View style={viewStyle}>
-      <Text style={textStyle}> Albums! </Text>
+      <Text style={textStyle}> {props.headerText} </Text>
     </View>                                             // ^
   );                                                    // |
 };                                                      // |

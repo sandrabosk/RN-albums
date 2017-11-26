@@ -1,14 +1,20 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
 
 // this will be a functional component since we do not need lifecycle methods
 // nor the access to the state
 
+// we are importing Card component and
+//we are replacing <View> tag with <Card> tag
+import Card from './Card';
+
 const AlbumDetail = (props) => {
   return (
-    <View>
+    // <View>
+    <Card>
       <Text>{ props.album.title }</Text>
-    </View>
+    </Card>
+    // </View>
   );
 };
 

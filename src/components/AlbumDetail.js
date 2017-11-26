@@ -19,3 +19,11 @@ const AlbumDetail = (props) => {
 };
 
 export default AlbumDetail;
+
+//to be able to display component inside another component we
+// 1. imported card component,
+// replaced view tags with the Card tags and that was
+// our way to wrap up this text "component" which we will send put
+// as a props argument that we are passing
+// the next step in the card componet:
+// over there we took our props object and we added the reference { props.children }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Image } from 'react-native';
 
 // this will be a functional component since we do not need lifecycle methods
 // nor the access to the state
@@ -9,20 +9,46 @@ import { Text, View } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 
-const AlbumDetail = (props) => {
+const AlbumDetail = ({ album }) => {
+  // in this case "album" is the argument object
+  // here insted the props in the braces we will put album
+  // because that is the only prop we are using
+  // the we will destructure album into the argument body elements
+  // after we do this we will delete props.album wherever we are using it
+  // example : { uri: props.album.thumbnail_image } => { uri: thumbnail_image }
+  const { title, artist, thumbnail_image, image } = album;
+
+  // the styles is used two times in
+  //(style={styles.thumbnailStyle}, style={styles.headerContentStyle})
+  // so we can destructure it too, but this is optional
+
+  const {
+    thumbnailStyle,
+    headerTextStyle,
+    headerContentStyle,
+    thumbnailContainerStyle,
+    imageStyle
+  } = styles;
+
   return (
     // <View>
     <Card>
       <CardSection>
 
-        <View></View>
-
-        <View style={styles.headerContentStyle}>
-          <Text> { props.album.title } </Text>
-          <Text> { props.album.artist } </Text>
+        <View style={thumbnailContainerStyle}>
+          <Image style={thumbnailStyle} source={{ uri: thumbnail_image }} />
         </View>
-        
+
+        <View style={headerContentStyle}>
+          <Text style={headerTextStyle}> { title } </Text>
+          <Text> { artist } </Text>
+        </View>
+
       </CardSection>
+    <CardSection>
+      <Image source={{ uri: image }} style={imageStyle} />
+    </CardSection>
+
     </Card>
     // </View>
   );
@@ -34,9 +60,28 @@ const styles = {
   headerContentStyle: {
     flexDirection: 'column',
     justifyContent: 'space-around'
+  },
+  headerTextStyle: {
+    fontSize: 18
+  },
+  thumbnailStyle: {
+    height: 50,
+    width: 50
+  },
+  thumbnailContainerStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 10,
+    marginRight: 10
+  },
+  imageStyle: {
+    height: 300,
+    flex: 1,
+    width: null
   }
-};
 
+};
+// !!! to be able to render image we have to specify their charactersitics upfront (height, width)
 export default AlbumDetail;
 
 //to be able to display component inside another component we

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
 // this will be a functional component since we do not need lifecycle methods
 // nor the access to the state
@@ -14,11 +14,27 @@ const AlbumDetail = (props) => {
     // <View>
     <Card>
       <CardSection>
-        <Text> { props.album.title } </Text>
+
+        <View></View>
+
+        <View style={styles.headerContentStyle}>
+          <Text> { props.album.title } </Text>
+          <Text> { props.album.artist } </Text>
+        </View>
+        
       </CardSection>
     </Card>
     // </View>
   );
+};
+//we have to style our second view tag which contains two text tags
+// we know we will have column style since one is under the oher one
+// we will use justifyContent: 'space-around' so it gives us equal white space arount it
+const styles = {
+  headerContentStyle: {
+    flexDirection: 'column',
+    justifyContent: 'space-around'
+  }
 };
 
 export default AlbumDetail;

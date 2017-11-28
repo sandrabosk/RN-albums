@@ -8,6 +8,7 @@ import { Text, View, Image } from 'react-native';
 //we are replacing <View> tag with <Card> tag
 import Card from './Card';
 import CardSection from './CardSection';
+import Button from './Button';
 
 const AlbumDetail = ({ album }) => {
   // in this case "album" is the argument object
@@ -45,9 +46,14 @@ const AlbumDetail = ({ album }) => {
         </View>
 
       </CardSection>
-    <CardSection>
-      <Image source={{ uri: image }} style={imageStyle} />
-    </CardSection>
+
+      <CardSection>
+        <Image source={{ uri: image }} style={imageStyle} />
+      </CardSection>
+      
+      <CardSection>
+        <Button />
+      </CardSection>
 
     </Card>
     // </View>

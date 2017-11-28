@@ -18,9 +18,9 @@ import AlbumList from './src/components/AlbumList';
 const App = () => (
     //since we will use component nesting here we dont need this <Text> tag
     // <Text> Something written here </Text>
-    <View>
+    // we are adding this style here so we can scroll through the whole list of albums
+    <View style={{ flex: 1 }}>
       <Header headerText={'Albums'} />
-
       <AlbumList />
     </View>
 );

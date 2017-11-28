@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+
+//since we want our content to be scrollable we are replacing
+// View tag with ScrollView tag
+import { ScrollView } from 'react-native';
+
 // to be able to get data from external API we need first to install library axios
 // and then we need to import it
 import axios from 'axios';
@@ -35,26 +39,26 @@ class AlbumList extends Component {
   // for each album display this information using text tag
 
   renderAlbums() {
-    return this.state.albums.map( album =>
+    return this.state.albums.map(album =>
       // we are using key here to set unique value for each album
       // the best to use in this purpose is ID but since our albums do not have ID
       // we are using the title
       // <Text key={ album.title }> {album.title} </Text> );
-      <AlbumDetail key={ album.title } album={album} /> );
+      <AlbumDetail key={album.title} album={album} />);
       // here up we use props to pass data from parent to child
       // from AlbumList to AlbumDetail component
       // in this statement  album={album} the first album is the property we are passing
       // from the beggining after the map
-      // and the second is the varible and can have any name we will be using for it in the child component
-
+      // and the second is the varible and can have any
+      //name we will be using for it in the child component
   }
 render() {
   console.log(this.state);
     return (
-      <View>
+      <ScrollView>
         {/* <Text>Album List !!!</Text> */}
-        { this.renderAlbums () }
-      </View>
+        { this.renderAlbums() }
+      </ScrollView>
     );
   }
 }

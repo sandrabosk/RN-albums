@@ -3,19 +3,24 @@ import { Text, TouchableOpacity } from 'react-native';
 
 // TouchableOpacity we use to get the effect of clicking on the Button
 // with TouchableOpacity the button fades in and out
-const Button = () => {
+// this onPress thet is passed as props is the same onPress
+// function that we defined in our <Button />
+
+const Button = ({ onPress, children }) => {
 const { buttonStyle, textStyle } = styles;
 
   return (
-    <TouchableOpacity style={buttonStyle}>
+    //this onPress in the {} is the one we passed in the props
+    <TouchableOpacity onPress={onPress} style={buttonStyle}>
       <Text style={textStyle}>
-        Click me!!!
+        {children}
+        {/* Click me!!! */}
       </Text>
     </TouchableOpacity>
   );
 };
 
-const styles={
+const styles = {
   textStyle: {
     alignSelf: 'center',
     color: '#007aff',

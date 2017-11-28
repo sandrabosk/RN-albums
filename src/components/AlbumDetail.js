@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Linking } from 'react-native';
 
 // this will be a functional component since we do not need lifecycle methods
 // nor the access to the state
@@ -17,7 +17,7 @@ const AlbumDetail = ({ album }) => {
   // the we will destructure album into the argument body elements
   // after we do this we will delete props.album wherever we are using it
   // example : { uri: props.album.thumbnail_image } => { uri: thumbnail_image }
-  const { title, artist, thumbnail_image, image } = album;
+  const { title, artist, thumbnail_image, image, url } = album;
 
   // the styles is used two times in
   //(style={styles.thumbnailStyle}, style={styles.headerContentStyle})
@@ -50,9 +50,14 @@ const AlbumDetail = ({ album }) => {
       <CardSection>
         <Image source={{ uri: image }} style={imageStyle} />
       </CardSection>
-      
+
       <CardSection>
-        <Button />
+        {/* this onPress can be called however and
+          it is not related to the onPress in TouchableOpacity */}
+        <Button onPress={() => Linking.openURL(url)}>
+          Buy Now
+        </Button>
+        {/* we do this so our Button component can be reusable */}
       </CardSection>
 
     </Card>

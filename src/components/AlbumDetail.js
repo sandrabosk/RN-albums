@@ -7,12 +7,15 @@ import { Text } from 'react-native';
 // we are importing Card component and
 //we are replacing <View> tag with <Card> tag
 import Card from './Card';
+import CardSection from './CardSection';
 
 const AlbumDetail = (props) => {
   return (
     // <View>
     <Card>
-      <Text>{ props.album.title }</Text>
+      <CardSection>
+        <Text> { props.album.title } </Text>
+      </CardSection>
     </Card>
     // </View>
   );

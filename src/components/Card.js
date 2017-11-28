@@ -6,10 +6,14 @@ const Card = (props) => {
     <View style={styles.containerStyle}>
       {/* we are adding this so we can reference
       that here some children components will be rendered  */}
-      {props.children}
+      { props.children }
     </View>
   );
 };
+
+//this { props.children } is the same as we pasted this:
+// <Text> { props.album.title } </Text>
+
 
 const styles = {
   containerStyle: {

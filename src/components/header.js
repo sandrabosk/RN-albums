@@ -30,10 +30,10 @@ const styles = {                                        // |
     // alignItems moves objects VERTICALLY              // |
 
     // justifyContent: 'flex-end'                       // |
-    justifyContent: 'center',                           // |
+    justifyContent: 'center',  //to position HORIZONTALLY  |
     // justifyContent: 'flex-start'                     // |
     // alignItems: 'flex-start'                         // |
-    alignItems: 'center',                               // |
+    alignItems: 'center', //to position VERTICALLY         |
     // alignItems: 'flex-end'                           // |
     height: 60,                                         // |
     paddingTop: 15,                                     // |

@@ -19,10 +19,11 @@ import AlbumDetail from './AlbumDetail';
 // };
 
 // lifecycle methods are the functions we create in our component
-class AlbumList extends Component {
+class AlbumList extends Component { //this shows us that we are talking about class based component
 // 1. set the default state of our component (for us that's an empty list of albums)
   state = { albums: [] };
 
+  // to connect with API
   componentWillMount() {
     // console.log('componentWillMount in AlbumList');
     axios.get('https://rallycoding.herokuapp.com/api/music_albums')
@@ -37,7 +38,7 @@ class AlbumList extends Component {
   // we create method thats gonna helpp us display data and since we kniw it
   // is an array we will use .map method in which we will call fat arrow function saying
   // for each album display this information using text tag
-
+//CLASS BASED COMPONENTS ALWAYS HAVE ONE METHOD AND THAT IS THE RENDER METHOD
   renderAlbums() {
     return this.state.albums.map(album =>
       // we are using key here to set unique value for each album

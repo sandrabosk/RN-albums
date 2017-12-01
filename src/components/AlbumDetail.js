@@ -86,6 +86,8 @@ const styles = {
     marginRight: 10
   },
   imageStyle: {
+    //we want our image to be full width of our viewport but we don't want to hardcode this
+    // this is the way:
     height: 300,
     flex: 1,
     width: null

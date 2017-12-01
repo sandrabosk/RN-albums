@@ -19,6 +19,7 @@ const App = () => (
     //since we will use component nesting here we dont need this <Text> tag
     // <Text> Something written here </Text>
     // we are adding this style here so we can scroll through the whole list of albums
+    // please expand this component to fill entire content area of the device
     <View style={{ flex: 1 }}>
       <Header headerText={'Albums'} />
       <AlbumList />
